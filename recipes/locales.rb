@@ -5,9 +5,9 @@
 
 bash "generate locales" do
 	code <<-EOC
-		sudo locale-gen #{node['dop_base']['locale']}
-		sudo update-locale LANG=#{node['dop_base']['locale']}
-		sudo update-locale LC_ALL=#{node['dop_base']['locale']}
-		sudo dpkg-reconfigure -f noninteractive locales
+		locale-gen #{node['dop_base']['locale']}
+		update-locale LANG=#{node['dop_base']['locale']}
+		update-locale LC_ALL=#{node['dop_base']['locale']}
+		dpkg-reconfigure -f noninteractive locales
 	EOC
 end
