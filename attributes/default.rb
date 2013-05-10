@@ -19,7 +19,8 @@ node.set['dop_base']['timezone'] = "Europe/Berlin"
 # # # # # # # # #
 # system users  #
 # # # # # # # # #
-node.set['users']['deploy'] = nil
+node.set['users']['deploy'] = Chef::EncryptedDataBagItem.load("users", "deploy")
+node.set['users']['service'] = Chef::EncryptedDataBagItem.load("users", "service")
 
 # # # # # # # # # #
 # ssh known hosts #

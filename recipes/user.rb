@@ -11,7 +11,12 @@ user_account node['users']['deploy']['name'] do
 	ssh_keygen false
 end
 
-sudo node['users']['deploy']['name']
+user_account node['users']['service']['name'] do
+	comment node['users']['service']['comment']
+	ssh_keys node['users']['service']['ssh_keys']
+	ssh_keygen false
+	home node['users']['service']['home']
+end
 
 cookbook_file "#{node['users']['deploy']['home']}/wrap-ssh4git.sh" do
 	source "wrap-ssh4git.sh"
