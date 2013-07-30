@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.0.4 (July 18, 2013)
+
+* rewrite hosts configuration
+
 ## 0.0.3 (May 10, 2013)
 
 * introduced service user

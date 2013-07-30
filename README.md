@@ -34,6 +34,7 @@ The following platforms are supported and tested:
 
 * Debian 6.0.7
 * Debian 7.0.0
+* Debian 7.1.0
 
 Other Debian family distributions are assumed to work.
 

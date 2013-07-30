@@ -3,13 +3,14 @@
 
 127.0.0.1 localhost
 <% @hosts['ipv4'].each do |entry| %>
-	<% entry.each do |key, value| %>
-		<%= key %> <%= value %>
-	<% end %>
+	<%= entry['ip']%> <% entry['domains'].each do |domain| %><%= domain %> <% end %>
 <% end %>
 
 # The following lines are desirable for IPv6 capable hosts
-::1     localhost ip6-localhost ip6-loopback
+<% @hosts['ipv6'].each do |entry| %>
+	<%= entry['ip']%> <% entry['domains'].each do |domain| %><%= domain %> <% end %>
+<% end %>
+
 fe00::0 ip6-localnet
 ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes

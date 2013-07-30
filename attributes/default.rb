@@ -1,20 +1,35 @@
 # # # # # # #
 # hostname  #
 # # # # # # #
-node.set['dop_base']['hosts']['hostname'] = (node['dop_base'].attribute?('local_developer')) ? "dop-#{node['dop_base']['local_developer']}" : "dop"
-node.set['dop_base']['hosts']['ipv4'] = [
-	{"127.0.0.1" => "#{node['dop_base']['hosts']['hostname']}.local #{node['dop_base']['hosts']['hostname']}"}
+node.default['dop_base']['hosts']['hostname'] = "dop"
+node.default['dop_base']['hosts']['ipv4'] = [
+	{
+		"ip" => "127.0.0.1",
+		"domains" => [
+			"localhost"
+		]
+	}
+]
+node.default['dop_base']['hosts']['ipv6'] = [
+	{
+		"ip" => "::1",
+		"domains" => [
+			"localhost",
+			"ip6-localhost",
+			"ip6-loopback"
+		]
+	}
 ]
 
 # # # # # # # # #
 # system locale #
 # # # # # # # # #
-node.set['dop_base']['locale'] = "en_US"
+node.default['dop_base']['locale'] = "en_US"
 
 # # # # # # # # # #
 # system timezone #
 # # # # # # # # # #
-node.set['dop_base']['timezone'] = "Europe/Berlin"
+node.default['dop_base']['timezone'] = "Europe/Berlin"
 
 # # # # # # # # #
 # system users  #
@@ -25,7 +40,7 @@ node.set['users']['service'] = Chef::EncryptedDataBagItem.load("users", "service
 # # # # # # # # # #
 # ssh known hosts #
 # # # # # # # # # #
-node.set['dop_base']['ssh_known_hosts_entry'] = [ 'github.com' ]
+node.default['dop_base']['ssh_known_hosts_entry'] = [ 'github.com' ]
 
 # # # # #
 # sudo  #
@@ -45,13 +60,13 @@ node.set['fail2ban']['email'] = 'root@localhost'
 # # # #
 # git #
 # # # #
-node.set['dop_base']['git']['user'] = node['dop_base']['hostname']
-node.set['dop_base']['git']['email'] = "git@#{node['dop_base']['hostname']}"
+node.default['dop_base']['git']['user'] = node['dop_base']['hostname']
+node.default['dop_base']['git']['email'] = "git@#{node['dop_base']['hostname']}"
 
 # # # # # # #
 # packages  #
 # # # # # # #
-node.set['dop_base']['packages'] = {
+node.default['dop_base']['packages'] = [
 	"htop",
 	"nmap"
-}
+]
