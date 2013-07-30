@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.0.5 (July 30, 2013)
+
+* track structure change of dop (integrate vagrant_prebuild recipe, which is run for prebuild VMs)
+
 ## 0.0.4 (July 18, 2013)
 
 * rewrite hosts configuration
