@@ -10,6 +10,10 @@
 **.orig
 # Mac finder artifacts
 .DS_Store
+.AppleDouble
+.Trashes
+# Windows artifacts
+.thumbs
 # Netbeans project directory
 /nbproject/
 # RubyMine project files
@@ -18,3 +22,5 @@
 /*.tmproj
 # vim artifacts
 **.swp
+# phpstorm project files
+.idea

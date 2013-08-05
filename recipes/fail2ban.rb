@@ -12,3 +12,11 @@ cookbook_file "/etc/fail2ban/jail.local" do
 	mode 0644
 	notifies :restart, "service[fail2ban]"
 end
+
+cookbook_file "/etc/fail2ban/filter.d/sshd.conf" do
+	source "fail2ban_filter_sshd"
+	owner "root"
+	group "root"
+	mode 0644
+	notifies :restart, "service[fail2ban]"
+end

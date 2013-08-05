@@ -10,6 +10,7 @@ cookbook_file "/etc/ssh/sshd_config" do
 	mode 0644
 end
 
-service "ssh" do 
-	action :restart
+service "ssh" do
+	supports :start => true, :stop => true, :reload => true, :restart => true, :status => true
+	action [ :enable, :restart ]
 end
