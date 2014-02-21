@@ -15,16 +15,23 @@ filter = sshd
 logpath = /var/log/auth.log
 maxretry = 6
 
-#[wordpress]
-#enabled = false
-#filter = wordpress
-#port = http,https
-#logpath = /var/log/nginx/access*.log
-#maxretry = 1
+[pure-ftpd]
+enabled = false
+port = ftp,ftp-data,ftps,ftps-data
+filter = pure-ftpd
+logpath = /var/log/messages
+maxretry = 3
 
-#[wp-spam]
-#enabled = false
-#filter = wp-spam
-#port = http,https
-#logpath = /var/log/nginx/access*.log
-#maxretry = 1
+[wordpress]
+enabled = false
+filter = wordpress
+port = http,https
+logpath = /var/log/nginx/access*.log
+maxretry = 1
+
+[wp-spam]
+enabled = false
+filter = wp-spam
+port = http,https
+logpath = /var/log/nginx/access*.log
+maxretry = 1
