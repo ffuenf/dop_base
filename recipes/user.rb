@@ -21,7 +21,7 @@ end
 cookbook_file "#{node['users']['deploy']['home']}/wrap-ssh4git.sh" do
 	source "wrap-ssh4git.sh"
 	owner node['users']['deploy']['name']
-	owner node['users']['deploy']['name']
+	group node['users']['deploy']['name']
 	mode 0700
 end
 

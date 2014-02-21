@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.0.6 (February 21, 2014)
+
+* enable sftp config
+* fix user/group setting
+* integrate fail2ban filter template for pure-ftpd
+* integrate fail2ban filter templates for wordpress (http://antispambee.de/ / http://wordpress.org/plugins/wp-fail2ban/)
+
 ## 0.0.5 (July 30, 2013)
 
 * track structure change of dop (integrate vagrant_prebuild recipe, which is run for prebuild VMs)

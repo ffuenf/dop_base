@@ -14,3 +14,17 @@ port = ssh
 filter = sshd
 logpath = /var/log/auth.log
 maxretry = 6
+
+#[wordpress]
+#enabled = false
+#filter = wordpress
+#port = http,https
+#logpath = /var/log/nginx/access*.log
+#maxretry = 1
+
+#[wp-spam]
+#enabled = false
+#filter = wp-spam
+#port = http,https
+#logpath = /var/log/nginx/access*.log
+#maxretry = 1

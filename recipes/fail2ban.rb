@@ -20,3 +20,27 @@ cookbook_file "/etc/fail2ban/filter.d/sshd.conf" do
 	mode 0644
 	notifies :restart, "service[fail2ban]"
 end
+
+cookbook_file "/etc/fail2ban/filter.d/pure-ftpd.conf" do
+	source "fail2ban_filter_pure-ftpd"
+	owner "root"
+	group "root"
+	mode 0644
+	notifies :restart, "service[fail2ban]"
+end
+
+cookbook_file "/etc/fail2ban/filter.d/wordpress.conf" do
+	source "fail2ban_filter_wordpress"
+	owner "root"
+	group "root"
+	mode 0644
+	notifies :restart, "service[fail2ban]"
+end
+
+cookbook_file "/etc/fail2ban/filter.d/wp-spam.conf" do
+	source "fail2ban_filter_wp-spam"
+	owner "root"
+	group "root"
+	mode 0644
+	notifies :restart, "service[fail2ban]"
+end
