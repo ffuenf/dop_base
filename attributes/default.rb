@@ -6,7 +6,8 @@ node.default['dop_base']['hosts']['ipv4'] = [
 	{
 		"ip" => "127.0.0.1",
 		"domains" => [
-			"localhost"
+			"localhost",
+      node['dop_base']['hosts']['hostname']
 		]
 	}
 ]
@@ -60,8 +61,8 @@ node.set['fail2ban']['email'] = 'root@localhost'
 # # # #
 # git #
 # # # #
-node.default['dop_base']['git']['user'] = node['dop_base']['hostname']
-node.default['dop_base']['git']['email'] = "git@#{node['dop_base']['hostname']}"
+node.default['dop_base']['git']['user'] = node['users']['deploy']['name']
+node.default['dop_base']['git']['email'] = "#{node['users']['deploy']['name']}@#{node['dop_base']['hosts']['hostname']}"
 
 # # # # # # #
 # packages  #

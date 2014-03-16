@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'test-kitchen'
+gem 'kitchen-vagrant'
+gem 'librarian-chef'
+gem 'knife-solo'
+gem 'knife-solo_data_bag'

@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+  driver_config:
+    require_chef_omnibus: latest
+
+provisioner:
+  name: chef_solo
+
+platforms:
+- name: debian-7.4.0-amd64
+  driver_config:
+    box: debian-7.4.0-amd64
+    box_url: https://s3-eu-west-1.amazonaws.com/ffuenf-vagrant-boxes/debian/debian-7.4.0-amd64_virtualbox.box
+
+suites:
+- name: default
+  data_bags_path: test/integration/default/data_bags
+  encrypted_data_bag_secret_key_path: test/integration/default/encrypted_data_bag_secret
+  run_list:
+    - recipe[dop_base::default]
+  attributes: {}
