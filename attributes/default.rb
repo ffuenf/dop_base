@@ -41,7 +41,7 @@ node.set['users']['service'] = Chef::EncryptedDataBagItem.load("users", "service
 # # # # # # # # # #
 # ssh known hosts #
 # # # # # # # # # #
-node.default['dop_base']['ssh_known_hosts_entry'] = [ 'github.com' ]
+node.default['dop_base']['ssh_known_hosts_entry'] = [ 'github.com', 'bitbucket.org' ]
 
 # # # # #
 # sudo  #
@@ -51,7 +51,10 @@ node.set['authorization']['sudo']['users'] = [ node['users']['deploy']['name'] ]
 node.set['authorization']['sudo']['passwordless'] = true
 node.set['authorization']['sudo']['include_sudoers_d'] = true
 node.set['authorization']['sudo']['agent_forwarding'] = true
-node.set['authorization']['sudo']['sudoers_defaults'] = ['env_reset']
+node.set['authorization']['sudo']['sudoers_defaults'] = [
+  'env_reset',
+  'env_keep=SSH_AUTH_SOCK'
+]
 
 # # # # # # #
 # fail2ban  #
