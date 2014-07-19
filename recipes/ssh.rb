@@ -11,6 +11,12 @@ cookbook_file "/etc/ssh/sshd_config" do
 end
 
 service "ssh" do
+	case node["platform"]
+	when "ubuntu"
+		if node["platform_version"].to_f >= 9.10
+			provider Chef::Provider::Service::Upstart
+		end
+	end
 	supports :start => true, :stop => true, :reload => true, :restart => true, :status => true
 	action [ :enable, :restart ]
 end
