@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.1.1 (August 7, 2014)
+
+* install ntpdate and set time every day via cron;
+
 ## 0.1.0 (July 19, 2014)
 
 * add compatibility with ubuntu (use upstart service provider for ssh; conditionally load dotdeb)
