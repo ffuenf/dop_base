@@ -5,16 +5,14 @@
 
 package "ntpdate"
 
-cron "set_time" do
+cron "set_ntpdate" do
 	month "*"
 	day "*"
 	minute "0"
 	hour "4"
 	weekday "*"
 	user "root"
-	command %Q{
-		/usr/sbin/ntpdate ptbtime1.ptb.de >/dev/null 2>&1 | logger -t ntpdate
-	}
+	command "/usr/sbin/ntpdate ptbtime1.ptb.de >/dev/null 2>&1 | logger -t ntpdate"
 end
 
 bash "set_timezone" do
