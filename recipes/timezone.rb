@@ -6,6 +6,7 @@
 package "ntpdate"
 
 cron "set_time" do
+	month "*"
 	day "*"
 	minute "0"
 	hour "4"
