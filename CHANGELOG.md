@@ -5,6 +5,7 @@ This file is used to list changes made in each version of dop_base.
 ## 0.1.2 (August 9, 2014)
 
 * include chef-sugar
+* include sysctl and set vm.overcommit_memory 1
 
 ## 0.1.1 (August 7, 2014)
 

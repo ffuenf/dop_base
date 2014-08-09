@@ -67,6 +67,11 @@ node.set['fail2ban']['email'] = 'root@localhost'
 node.default['dop_base']['git']['user'] = node['users']['deploy']['name']
 node.default['dop_base']['git']['email'] = "#{node['users']['deploy']['name']}@#{node['dop_base']['hosts']['hostname']}"
 
+# # # # # #
+# sysctl  #
+# # # # # #
+node.default['sysctl']['params']['vm.overcommit_memory'] = 1
+
 # # # # # # #
 # packages  #
 # # # # # # #

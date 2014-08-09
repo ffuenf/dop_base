@@ -17,6 +17,7 @@ template "/etc/hosts" do
 	mode 0644
 end
 
+include_recipe "sysctl"
 include_recipe "chef-sugar::default"
 include_recipe "dop_base::user"
 include_recipe "dop_base::timezone"
