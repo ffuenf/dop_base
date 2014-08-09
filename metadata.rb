@@ -21,6 +21,7 @@ end
 	logrotate
 	htpasswd
   chef_handler
+  chef-sugar
 	}.each do |ressource|
 	depends ressource
 end
