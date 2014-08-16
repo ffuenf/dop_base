@@ -1,9 +1,9 @@
 dop_base
 ========
-[![Build Status](http://img.shields.io/travis/arosenhagen/dop_base.svg)][travis]
+[![Build Status](http://img.shields.io/travis/ffuenf/dop_base.svg)][travis]
 [![Gittip](http://img.shields.io/gittip/arosenhagen.svg)][gittip]
 
-[travis]: http://travis-ci.org/arosenhagen/dop_base
+[travis]: http://travis-ci.org/ffuenf/dop_base
 [gittip]: https://www.gittip.com/arosenhagen
 
 dop_base is a wrapper-cookbook to setup commonly used services by ffuenf.
@@ -77,7 +77,7 @@ Development
 Testing
 -------
 
-dop_base is on [Travis CI](http://travis-ci.org/arosenhagen/dop_base) which tests against multiple Chef and Ruby versions.
+dop_base is on [Travis CI](http://travis-ci.org/ffuenf/dop_base) which tests against multiple Chef and Ruby versions.
 
 The following Rake tasks are provided for automated testing of the cookbook:
 
