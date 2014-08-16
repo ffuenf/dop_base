@@ -1,6 +1,8 @@
 AllCops:
   Exclude:
-      - 'berks-cookbooks/**/*'
+    - 'berks-cookbooks/**/*'
 
+Encoding:
+  Enabled: false
 LineLength:
-  Max: 500
+  Enabled: false
