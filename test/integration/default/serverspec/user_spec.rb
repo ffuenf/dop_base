@@ -54,9 +54,16 @@ describe file('/home/dop_deploy/.gitconfig') do
   it { should be_grouped_into 'dop_deploy' }
 end
 
+describe file('/home/dop_deploy/.bashrc') do
+  it { should be_file }
+  it { should be_mode 644 }
+  it { should be_owned_by 'dop_deploy' }
+  it { should be_grouped_into 'dop_deploy' }
+end
+
 describe file('/home/dop_deploy/.gitconfig') do
-  its(:content) { should match /email = dop_deploy@dop/ }
-  its(:content) { should match /name = dop_deploy/ }
+  it { should contain 'name = dop_deploy' }
+  it { should contain 'email = dop_deploy@dop' }
 end
 
 describe user('dop_service') do

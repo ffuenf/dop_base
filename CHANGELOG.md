@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.0 (August 16, 2014)
+
+* add colorized bash prompt via .bashrc
+* remove ntpdate setting via cron. add ntp service instead
+* add more packages (ntp, siege)
+* update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci
+
 ## 0.1.2 (August 9, 2014)
 
 * include chef-sugar

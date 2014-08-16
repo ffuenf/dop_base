@@ -1,81 +1,75 @@
 # # # # # # #
 # hostname  #
 # # # # # # #
-node.default['dop_base']['hosts']['hostname'] = "dop"
-node.default['dop_base']['hosts']['ipv4'] = [
-	{
-		"ip" => "127.0.0.1",
-		"domains" => [
-			"localhost",
+default['dop_base']['hosts']['hostname'] = 'dop'
+default['dop_base']['hosts']['ipv4'] = [
+  {
+    'ip' => '127.0.0.1',
+    'domains' => [
+      'localhost',
       node['dop_base']['hosts']['hostname']
-		]
-	}
+    ]
+  }
 ]
-node.default['dop_base']['hosts']['ipv6'] = [
-	{
-		"ip" => "::1",
-		"domains" => [
-			"localhost",
-			"ip6-localhost",
-			"ip6-loopback"
-		]
-	}
+default['dop_base']['hosts']['ipv6'] = [
+  {
+    'ip' => '::1',
+    'domains' => [
+      'localhost',
+      'ip6-localhost',
+      'ip6-loopback'
+    ]
+  }
 ]
 
 # # # # # # # # #
 # system locale #
 # # # # # # # # #
-node.default['dop_base']['locale'] = "en_US"
+default['dop_base']['locale'] = 'en_US'
 
 # # # # # # # # # #
 # system timezone #
 # # # # # # # # # #
-node.default['dop_base']['timezone'] = "Europe/Berlin"
+default['dop_base']['timezone'] = 'Europe/Berlin'
 
 # # # # # # # # #
 # system users  #
 # # # # # # # # #
-node.set['users']['deploy'] = Chef::EncryptedDataBagItem.load("users", "deploy")
-node.set['users']['service'] = Chef::EncryptedDataBagItem.load("users", "service")
+default['users']['deploy'] = Chef::EncryptedDataBagItem.load('users', 'deploy')
+default['users']['service'] = Chef::EncryptedDataBagItem.load('users', 'service')
 
 # # # # # # # # # #
 # ssh known hosts #
 # # # # # # # # # #
-node.default['dop_base']['ssh_known_hosts_entry'] = [ 'github.com', 'bitbucket.org' ]
+default['dop_base']['ssh_known_hosts_entry'] = %w(github.com bitbucket.org)
 
 # # # # #
 # sudo  #
 # # # # #
-node.set['authorization']['sudo']['groups'] = [ "sudo" ]
-node.set['authorization']['sudo']['users'] = [ node['users']['deploy']['name'] ]
-node.set['authorization']['sudo']['passwordless'] = true
-node.set['authorization']['sudo']['include_sudoers_d'] = true
-node.set['authorization']['sudo']['agent_forwarding'] = true
-node.set['authorization']['sudo']['sudoers_defaults'] = [
-  'env_reset',
-  'env_keep=SSH_AUTH_SOCK'
-]
+default['authorization']['sudo']['groups'] = ['sudo']
+default['authorization']['sudo']['users'] = [node['users']['deploy']['name']]
+default['authorization']['sudo']['passwordless'] = true
+default['authorization']['sudo']['include_sudoers_d'] = true
+default['authorization']['sudo']['agent_forwarding'] = true
+default['authorization']['sudo']['sudoers_defaults'] = %w(env_reset env_keep=SSH_AUTH_SOCK)
 
 # # # # # # #
 # fail2ban  #
 # # # # # # #
-node.set['fail2ban']['email'] = 'root@localhost'
+default['fail2ban']['email'] = 'root@localhost'
 
 # # # #
 # git #
 # # # #
-node.default['dop_base']['git']['user'] = node['users']['deploy']['name']
-node.default['dop_base']['git']['email'] = "#{node['users']['deploy']['name']}@#{node['dop_base']['hosts']['hostname']}"
+default['dop_base']['git']['user'] = node['users']['deploy']['name']
+default['dop_base']['git']['email'] = "#{node['users']['deploy']['name']}@#{node['dop_base']['hosts']['hostname']}"
 
 # # # # # #
 # sysctl  #
 # # # # # #
-node.default['sysctl']['params']['vm.overcommit_memory'] = 1
+default['sysctl']['params']['vm.overcommit_memory'] = 1
 
 # # # # # # #
 # packages  #
 # # # # # # #
-node.default['dop_base']['packages'] = [
-	"htop",
-	"nmap"
-]
+default['dop_base']['packages'] = %w(htop nmap siege python-pip libxml-xpath-perl)

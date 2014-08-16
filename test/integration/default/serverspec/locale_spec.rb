@@ -13,6 +13,6 @@ describe command('echo $LANG') do
   it { should return_stdout 'en_US' }
 end
 
-describe command('echo $LC_ALL') do
+describe command('echo $LC_ALL'), if: os[:family] == 'Debian' do
   it { should return_stdout 'en_US.UTF-8' }
 end
