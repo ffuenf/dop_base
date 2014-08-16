@@ -1,2 +1,6 @@
+AllCops:
+  Exclude:
+      - 'berks-cookbooks/**/*'
+
 LineLength:
   Max: 500
