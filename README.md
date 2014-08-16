@@ -1,11 +1,11 @@
 dop_base
 ========
-[![GitHub release](http://img.shields.io/github/release/ffuenf/dop_base.svg)][release]
+[![GitHub tag](http://img.shields.io/github/tag/ffuenf/dop_base.svg)][tag]
 [![Build Status](http://img.shields.io/travis/ffuenf/dop_base.svg)][travis]
 [![Gittip](http://img.shields.io/gittip/arosenhagen.svg)][gittip]
 
-[release]: https://github.com/ffuenf/dop_base/releases
-[travis]: http://travis-ci.org/ffuenf/dop_base
+[tag]: https://github.com/ffuenf/dop_base/tags
+[travis]: https://travis-ci.org/ffuenf/dop_base
 [gittip]: https://www.gittip.com/arosenhagen
 
 dop_base is a wrapper-cookbook to setup commonly used services by ffuenf.
