@@ -8,8 +8,8 @@ before_script:
   - bundle exec berks vendor
 
 script:
-  - bundle exec rake rubocop
-  - bundle exec rake foodcritic
+  - bundle exec rubocop
+  - bundle exec foodcritic -f any .
 
 branches:
   only:
