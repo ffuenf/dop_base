@@ -61,6 +61,7 @@ default['fail2ban']['email'] = 'root@localhost'
 # # # #
 # git #
 # # # #
+default['dop_base']['git']['wrapper_port'] = nil
 default['dop_base']['git']['user'] = node['users']['deploy']['name']
 default['dop_base']['git']['email'] = "#{node['users']['deploy']['name']}@#{node['dop_base']['hosts']['hostname']}"
 

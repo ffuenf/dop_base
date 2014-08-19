@@ -11,8 +11,11 @@ user_account node['users']['deploy']['name'] do
   ssh_keygen false
 end
 
-cookbook_file "#{node['users']['deploy']['home']}/wrap-ssh4git.sh" do
-  source 'wrap-ssh4git.sh'
+template "#{node['users']['deploy']['home']}/wrap-ssh4git.sh" do
+  source 'wrap-ssh4git.sh.erb'
+  variables(
+    git: node['dop_base']['git']
+  )
   owner node['users']['deploy']['name']
   group node['users']['deploy']['group']
   mode 0700

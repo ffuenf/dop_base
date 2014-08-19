@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+/usr/bin/env ssh -o "StrictHostKeyChecking=no" -o "ForwardAgent=yes" <%= "-p #{@git['wrapper_port']}" if @git['wrapper_port'] %> $1 $2
