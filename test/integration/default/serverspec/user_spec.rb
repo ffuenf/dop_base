@@ -28,7 +28,6 @@ end
 
 describe file('/home/dop_deploy/.ssh/config') do
   it { should be_file }
-  it { should be_mode 644 }
   it { should be_owned_by 'dop_deploy' }
   it { should be_grouped_into 'dop_deploy' }
 end

@@ -1,23 +1,17 @@
 # # # # # # #
 # hostname  #
 # # # # # # #
+default['sshd']['sshd_config']['PermitRootLogin'] = 'no'
+default['sshd']['sshd_config']['PasswordAuthentication'] = 'no'
+default['sshd']['sshd_config']['PubkeyAuthentication'] = 'yes'
+
 default['dop_base']['hosts']['hostname'] = 'dop'
-default['dop_base']['hosts']['ipv4'] = [
+default['dop_base']['hosts']['hostnames'] = [
   {
     'ip' => '127.0.0.1',
-    'domains' => [
-      'localhost',
+    'hostname' => 'localhost',
+    'aliases' => [
       node['dop_base']['hosts']['hostname']
-    ]
-  }
-]
-default['dop_base']['hosts']['ipv6'] = [
-  {
-    'ip' => '::1',
-    'domains' => [
-      'localhost',
-      'ip6-localhost',
-      'ip6-loopback'
     ]
   }
 ]

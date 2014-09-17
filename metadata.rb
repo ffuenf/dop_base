@@ -13,8 +13,12 @@ end
 %w(
   sudo
   user
-  ssh_known_hosts
+  sshd
+  ssh
+  hostnames
+  hostsfile
   apt
+  apt_cleanup
   git
   dotdeb
   ntp

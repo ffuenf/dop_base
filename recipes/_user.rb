@@ -6,9 +6,14 @@
 include_recipe 'user'
 include_recipe 'sudo'
 
+ohai 'reload' do
+  action :nothing
+end
+
 user_account node['users']['deploy']['name'] do
   ssh_keys node['users']['deploy']['ssh_keys']
   ssh_keygen false
+  notifies :reload, 'ohai[reload]', :immediately
 end
 
 template "#{node['users']['deploy']['home']}/wrap-ssh4git.sh" do
@@ -21,11 +26,14 @@ template "#{node['users']['deploy']['home']}/wrap-ssh4git.sh" do
   mode 0700
 end
 
-cookbook_file "#{node['users']['deploy']['home']}/.ssh/config" do
-  source 'ssh_config'
-  owner node['users']['deploy']['name']
-  group node['users']['deploy']['group']
-  mode 0644
+ssh_config '*' do
+  user node['users']['deploy']['name']
+  options StrictHostKeyChecking: 'no',
+          UserKnownHostsFile: '/etc/ssh/ssh_known_hosts',
+          ControlPersist: 'yes',
+          ControlMaster: 'yes',
+          ControlPath: '/tmp/%r@%h:%p',
+          NoHostAuthenticationForLocalhost: 'yes'
 end
 
 cookbook_file "#{node['users']['deploy']['home']}/.gemrc" do
@@ -61,4 +69,5 @@ user_account node['users']['service']['name'] do
   ssh_keys node['users']['service']['ssh_keys']
   ssh_keygen false
   home node['users']['service']['home']
+  notifies :reload, 'ohai[reload]', :immediately
 end

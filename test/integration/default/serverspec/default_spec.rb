@@ -11,13 +11,8 @@ end
 
 describe host('dop') do
   it { should be_resolvable.by('hosts') }
-end
-
-describe file('/etc/ssh/ssh_known_hosts') do
-  it { should be_file }
-  it { should be_mode 644 }
-  it { should be_owned_by 'root' }
-  it { should be_grouped_into 'root' }
+  it { should be_reachable }
+  its(:ipaddress) { should eq '127.0.0.1' }
 end
 
 %w(htop nmap siege python-pip libxml-xpath-perl ntp ntpdate).each do |pkg|
