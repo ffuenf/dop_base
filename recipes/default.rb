@@ -25,8 +25,7 @@ node['dop_base']['hosts']['hostnames'].each do |entry|
     ip_address entry['ip']
     hostname entry['hostname']
     aliases entry['aliases']
-    unique true
-    action :create
+    action :create_if_missing
     notifies :reload, 'ohai[reload]', :immediately
   end
 end
