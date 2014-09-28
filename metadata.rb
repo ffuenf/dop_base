@@ -4,7 +4,7 @@ license 'Apache 2.0'
 description 'installs/configures dop_base'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 name 'dop_base'
-version '0.2.0'
+version '0.2.1'
 
 %w( debian ).each do |os|
   supports os
@@ -28,6 +28,7 @@ end
   chef_handler
   chef-sugar
   sysctl
+  sysdig
 ).each do |ressource|
   depends ressource
 end

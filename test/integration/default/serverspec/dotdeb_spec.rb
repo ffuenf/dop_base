@@ -1,13 +1,6 @@
 require 'serverspec'
-
-include Serverspec::Helper::Exec
-include Serverspec::Helper::DetectOS
-
-RSpec.configure do |c|
-  c.before :all do
-    c.path = '/sbin:/usr/sbin'
-  end
-end
+set :backend, :exec
+set :path, '/sbin:/usr/sbin:/usr/local/sbin:$PATH'
 
 describe file('/etc/apt/sources.list.d/dotdeb.list'), if: os[:family] == 'Debian' do
   it { should be_file }

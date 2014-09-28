@@ -15,6 +15,9 @@ group :kitchen_common do
   gem 'knife-solo'
   gem 'knife-solo_data_bag'
   gem 'test-kitchen'
+  gem 'rspec', '~> 3.0.0'
+  gem 'serverspec', '~> 2.0.0.beta21'
+  gem 'busser-serverspec', '~> 0.2.7'
 end
 
 group :kitchen_vagrant do
