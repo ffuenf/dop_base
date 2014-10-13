@@ -42,34 +42,6 @@ suites:
           "filter": "sshd",
           "logpath": "/var/log/auth.log",
           "maxretry": "6"
-        },
-        "pure-ftpd": {
-          "enabled": "true",
-          "port": "ftp,ftp-data,ftps,ftps-data",
-          "filter": "pure-ftpd",
-          "logpath": "/var/log/messages",
-          "maxretry": "3"
-        },
-        "wordpress": {
-          "enabled": "true",
-          "port": "http,https",
-          "filter": "wordpress",
-          "logpath": "/var/log/nginx/*access*.log",
-          "maxretry": "1"
-        },
-        "wp-spam": {
-          "enabled": "true",
-          "port": "http,https",
-          "filter": "wp-spam",
-          "logpath": "/var/log/nginx/*access*.log",
-          "maxretry": "1"
-        },
-        "antispam-bee": {
-          "enabled": "true",
-          "port": "http,https",
-          "filter": "antispam-bee",
-          "logpath": "/var/log/nginx/*access*.log",
-          "maxretry": "1"
         }
       }
     }
