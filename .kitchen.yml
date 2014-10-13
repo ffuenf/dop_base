@@ -13,12 +13,12 @@ platforms:
 - name: debian-7.6.0-amd64
   driver_config:
     box: debian-7.6.0-amd64
-    box_url: https://vagrantcloud.com/ffuenf/debian-7.6.0-amd64/version/2/provider/virtualbox.box
+    box_url: https://vagrantcloud.com/ffuenf/boxes/debian-7.6.0-amd64/versions/8/providers/virtualbox.box
 
 - name: ubuntu-14.04-server-amd64
   driver_config:
     box: ubuntu-14.04-server-amd64
-    box_url: https://vagrantcloud.com/ffuenf/ubuntu-14.04-server-amd64/version/2/provider/virtualbox.box
+    box_url: https://vagrantcloud.com/ffuenf/boxes/ubuntu-14.04-server-amd64/versions/11/providers/virtualbox.box
 
 suites:
 - name: default
@@ -26,4 +26,51 @@ suites:
   encrypted_data_bag_secret_key_path: .data_bags/insecure_databag_secret
   run_list:
     - recipe[dop_base::default]
-  attributes: {}
+  attributes: {
+    "fail2ban": {
+      "services": {
+        "ssh": {
+          "enabled": "true",
+          "port": "ssh",
+          "filter": "sshd-ddos",
+          "logpath": "/var/log/auth.log",
+          "maxretry": "6"
+        },
+        "ssh": {
+          "enabled": "true",
+          "port": "ssh",
+          "filter": "sshd",
+          "logpath": "/var/log/auth.log",
+          "maxretry": "6"
+        },
+        "pure-ftpd": {
+          "enabled": "true",
+          "port": "ftp,ftp-data,ftps,ftps-data",
+          "filter": "pure-ftpd",
+          "logpath": "/var/log/messages",
+          "maxretry": "3"
+        },
+        "wordpress": {
+          "enabled": "true",
+          "port": "http,https",
+          "filter": "wordpress",
+          "logpath": "/var/log/nginx/*access*.log",
+          "maxretry": "1"
+        },
+        "wp-spam": {
+          "enabled": "true",
+          "port": "http,https",
+          "filter": "wp-spam",
+          "logpath": "/var/log/nginx/*access*.log",
+          "maxretry": "1"
+        },
+        "antispam-bee": {
+          "enabled": "true",
+          "port": "http,https",
+          "filter": "antispam-bee",
+          "logpath": "/var/log/nginx/*access*.log",
+          "maxretry": "1"
+        }
+      }
+    }
+  }

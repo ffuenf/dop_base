@@ -2,6 +2,18 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.2 (October 13, 2014)
+
+* introduce serverspec2;
+* add antispam-bee fail2ban settings
+* make fail2ban dynamic (activate rules with attribute settings)
+
+## 0.2.1 (September 28, 2014)
+
+* prepare upgrade to serverspec2;
+* add sysdig recipe;
+* rewrite tests to fullfill serverspec2 compatibility;
+
 ## 0.2.0 (August 16, 2014)
 
 * add colorized bash prompt via .bashrc
