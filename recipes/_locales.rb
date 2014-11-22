@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: dop_base
-# Recipe:: locales
+# Recipe:: _locales
 #
 
 bash 'generate locales' do

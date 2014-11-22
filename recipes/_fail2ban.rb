@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: dop_base
-# Recipe:: fail2ban
+# Recipe:: _fail2ban
 #
 
 include_recipe 'fail2ban'

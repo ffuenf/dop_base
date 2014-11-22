@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: dop_base
-# Recipe:: logrotate
+# Recipe:: _logrotate
 #
 
 include_recipe 'logrotate'

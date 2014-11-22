@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: dop_base
-# Recipe:: timezone
+# Recipe:: _timezone
 #
 
 bash 'set_timezone' do

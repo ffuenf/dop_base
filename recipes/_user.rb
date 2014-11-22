@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: dop_base
-# Recipe:: user
+# Recipe:: _user
 #
 
 include_recipe 'user'

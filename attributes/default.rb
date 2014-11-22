@@ -68,4 +68,4 @@ default['sysctl']['params']['vm.overcommit_memory'] = 1
 # # # # # # #
 # packages  #
 # # # # # # #
-default['dop_base']['packages'] = %w(htop nmap siege python-pip libxml-xpath-perl)
+default['dop_base']['packages'] = %w(htop nmap siege python-pip libxml-xpath-perl rsync)

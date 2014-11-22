@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.3 (November 22, 2014)
+
+* add awscli
+* add gnupg
+
 ## 0.2.2 (October 13, 2014)
 
 * introduce serverspec2;

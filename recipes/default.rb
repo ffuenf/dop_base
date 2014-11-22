@@ -3,6 +3,7 @@
 # Recipe:: default
 #
 
+include_recipe 'chef-sugar'
 include_recipe 'hostnames'
 include_recipe 'sshd'
 include_recipe 'ssh'
@@ -18,6 +19,9 @@ include_recipe 'dop_base::_timezone'
 include_recipe 'dop_base::_locales'
 include_recipe 'dop_base::_fail2ban'
 include_recipe 'dop_base::_logrotate'
+include_recipe 'dop_base::_awscli'
+include_recipe 'dop_base::_gnupg'
+include_recipe 'chef_handler'
 include_recipe 'apt_cleanup'
 
 node['dop_base']['hosts']['hostnames'].each do |entry|
