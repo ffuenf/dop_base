@@ -37,6 +37,11 @@ ohai 'reload' do
   action :nothing
 end
 
+directory '/root/.ssh' do
+  owner 'root'
+  group 'root'
+  mode 0700
+end
 node['dop_base']['ssh_known_hosts_entry'].each do |host|
   ssh_known_hosts host
 end

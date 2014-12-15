@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.4 (December 15, 2014)
+
+* add .ssh/ for root user
+
 ## 0.2.3 (November 22, 2014)
 
 * add awscli
