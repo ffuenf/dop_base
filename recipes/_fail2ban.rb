@@ -44,3 +44,11 @@ cookbook_file '/etc/fail2ban/filter.d/antispam-bee.conf' do
   mode 0644
   notifies :restart, 'service[fail2ban]'
 end
+
+cookbook_file '/etc/fail2ban/filter.d/nginx-limitreq.conf' do
+  source 'fail2ban_filter_nginx-limitreq'
+  owner 'root'
+  group 'root'
+  mode 0644
+  notifies :restart, 'service[fail2ban]'
+end

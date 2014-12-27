@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.6 (December 27, 2014)
+
+* add (nginx-limitreq)[https://cowthink.org/custom-fail2ban-filter-for-limit-req-nginx/] fail2ban settings
+
 ## 0.2.5 (December 17, 2014)
 
 * update awscli config and credential settings
