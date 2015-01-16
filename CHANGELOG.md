@@ -2,6 +2,17 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.7 (January 16, 2015)
+
+* add (Advanced Policy Firewall)[https://www.rfxn.com/projects/advanced-policy-firewall/]
+* add (Brute Force Detection)[https://www.rfxn.com/projects/brute-force-detection/]
+* add (Linux Malware Detect)[https://www.rfxn.com/projects/linux-malware-detect/]
+* add compatibility between apf and fail2ban
+* add custom motd
+* embrace best practices from (Secure Secure Shell)[https://stribika.github.io/2015/01/04/secure-secure-shell.html] and (Secure Secure Shell on Debian Wheezy)[https://xivilization.net/~marek/blog/2015/01/12/secure-secure-shell-on-debian-wheezy/]
+* adjust /etc/default/sysstat
+* embrace (Quick Tip: Serverspec Spec_helper in Test Kitchen)[http://jtimberman.housepub.org/blog/2014/12/31/quick-tip-serverspec-spec-helper-in-test-kitchen/]
+
 ## 0.2.6 (December 27, 2014)
 
 * add (nginx-limitreq)[https://cowthink.org/custom-fail2ban-filter-for-limit-req-nginx/] fail2ban settings

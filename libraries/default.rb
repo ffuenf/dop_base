@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: dop_base
-# Recipe:: _timezone
+# Library:: default
 #
 # Copyright 2015, Achim Rosenhagen
 #
@@ -17,9 +17,26 @@
 # limitations under the License.
 #
 
-bash 'set_timezone' do
-  code <<-EOF
-    echo "#{node['dop_base']['timezone']}" > /etc/timezone
-    dpkg-reconfigure -f noninteractive tzdata
-  EOF
+require 'chef/mixin/shell_out'
+include Chef::Mixin::ShellOut
+
+def maldetect_version?(version)
+  cmdstr = "maldet | grep -qi 'Linux Malware Detect v#{version}'"
+  cmd = Mixlib::ShellOut.new(cmdstr)
+  cmd.run_command
+  cmd.exitstatus == 0
+end
+
+def bfd_version?(version)
+  cmdstr = "bfd | grep -qi 'Brute Force Detection v#{version}'"
+  cmd = Mixlib::ShellOut.new(cmdstr)
+  cmd.run_command
+  cmd.exitstatus == 0
+end
+
+def apf_version?(version)
+  cmdstr = "apf | grep -qi 'Adcanced Policy Firewall v#{version}'"
+  cmd = Mixlib::ShellOut.new(cmdstr)
+  cmd.run_command
+  cmd.exitstatus == 0
 end

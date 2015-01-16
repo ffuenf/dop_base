@@ -1,7 +1,7 @@
 language: ruby
 bundler_args: --without kitchen_vagrant --without development
 rvm:
-- 2.1.5
+- 2.2.0
 before_install:
 - echo -n $DO_KEY_CHUNK_{0..30} >> ~/.ssh/id_do.base64
 - cat ~/.ssh/id_do.base64 | tr -d ' ' | base64 --decode > ~/.ssh/id_do.pem
@@ -40,7 +40,7 @@ env:
   - secure: ARWZrS8JZ91mnjzp9FpLoyjT7yg9WgvyCooEbxUrKeHnf+9NKxUrEwPkOLTsIjbwXOJPiBZyjOgLk/l2XOzaWsPgvfR/y1zDuDlqmtEAryQQ4oiSFl0cZBTWGPScARhWaHctIH/SFBb5RNyiqD8+Xj/E/IvH/gIHgQKB59i2hY4=
   - secure: A27LwyfAHplMDME4oDTSc/ilx8hsP5nhR2dRbdk291+zIpoYU4DoAJ6IodVN3GRqhszVAVFib+5GN8Qx1+TImcZxprZhPPheOWnCRdfOkrPvqFEflgVNPlx5TUAVDAtBK8e2s97SfqI5lIf5HE9PMcIUGsPHoJDMd+WmzjBQqKU=
 matrix:
-- KITCHEN_INSTANCE='default-debian-7-7-x64'
+- KITCHEN_INSTANCE='default-debian-7-8-x64'
 - KITCHEN_INSTANCE='default-ubuntu-14-04-1-x64'
 notifications:
   slack:

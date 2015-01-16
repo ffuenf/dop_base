@@ -37,6 +37,7 @@ The following platforms are supported and tested:
 * Debian 6.x
 * Debian 7.x
 * Ubuntu 14.04.x
+* Ubuntu 14.10.x
 
 Other Debian family distributions are assumed to work.
 
@@ -85,7 +86,6 @@ The following Rake tasks are provided for automated testing of the cookbook:
 $ rake -T
 rake integration:cloud    # Run Test Kitchen with cloud plugins
 rake integration:vagrant  # Run Test Kitchen with Vagrant
-rake integration:docker   # Run Test Kitchen with Docker
 rake spec                 # Run ChefSpec examples
 rake style                # Run all style checks
 rake style:chef           # Lint Chef cookbooks
@@ -99,7 +99,7 @@ License and Author
 
 - Author:: Achim Rosenhagen (<a.rosenhagen@ffuenf.de>)
 
-- Copyright:: 2014, ffuenf
+- Copyright:: 2015, ffuenf
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

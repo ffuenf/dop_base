@@ -4,12 +4,13 @@ driver_config:
 
 provisioner:
   name: chef_zero
+  data_path: test/shared
   solo_rb:
     ssl_verify_mode: verify_peer
   require_chef_omnibus: latest
 
 platforms:
-- name: debian-7-7-x64
+- name: debian-7-8-x64
   driver_plugin: digitalocean
   driver_config:
     region: ams3
