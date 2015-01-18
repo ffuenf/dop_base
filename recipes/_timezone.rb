@@ -17,9 +17,9 @@
 # limitations under the License.
 #
 
-bash 'set_timezone' do
-  code <<-EOF
-    echo "#{node['dop_base']['timezone']}" > /etc/timezone
-    dpkg-reconfigure -f noninteractive tzdata
-  EOF
+execute 'set_timezone' do
+  command "echo #{node['dop_base']['timezone']} > /etc/timezone"
+end
+execute 'set_timezone' do
+  command 'dpkg-reconfigure -f noninteractive tzdata'
 end
