@@ -86,6 +86,7 @@ default['dop_base']['bfd']['checksum'] = 'c3fbce3a17156b047d4efc2b3398c5bf021af7
 default['dop_base']['apf']['url'] = 'http://www.rfxn.com/downloads/apf-current.tar.gz'
 default['dop_base']['apf']['version'] = '9.7-2'
 default['dop_base']['apf']['checksum'] = '793d83ca2657b86b86a23b1c3fe08ee436df8c4a83ef84c92f0f11689531a2cc'
+default['dop_base']['apf']['enable'] = false
 default['dop_base']['apf']['devmode'] = true
 
 # # # # # # #

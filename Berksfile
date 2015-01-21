@@ -1,4 +1,4 @@
-source 'https://supermarket.getchef.com'
+source 'https://supermarket.chef.io'
 
 cookbook 'dotdeb', git: 'https://github.com/ffuenf/chef-dotdeb'
 cookbook 'ssh', git: 'https://github.com/markolson/chef-ssh'

@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.8 (January 21, 2015)
+
+* disable (Advanced Policy Firewall)[https://www.rfxn.com/projects/advanced-policy-firewall/] by default
+* update travis-ci: use containerized infrastructure
+
 ## 0.2.7 (January 16, 2015)
 
 * add (Advanced Policy Firewall)[https://www.rfxn.com/projects/advanced-policy-firewall/]

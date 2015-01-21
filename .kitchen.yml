@@ -30,6 +30,7 @@ suites:
   attributes: {
     "dop_base": {
       "apf": {
+        "enable": true
         "devmode": false
       }
     },

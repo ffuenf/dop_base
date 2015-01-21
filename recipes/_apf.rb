@@ -50,4 +50,5 @@ end
 
 execute 'start_apf' do
   command 'apf -s'
+  only_if { node['dop_base']['apf']['enable'] }
 end
