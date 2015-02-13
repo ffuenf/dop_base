@@ -72,6 +72,7 @@ default['sysctl']['params']['vm.overcommit_memory'] = 1
 default['dop_base']['maldetect']['url'] = 'http://www.rfxn.com/downloads/maldetect-current.tar.gz'
 default['dop_base']['maldetect']['version'] = '1.4.2'
 default['dop_base']['maldetect']['checksum'] = 'dd2badb95f75ae90ed94892d799aedadc79498a72ef3502ab87f35509c76c094'
+default['dop_base']['maldetect']['enable'] = false
 
 # # # #
 # bfd #
@@ -79,6 +80,7 @@ default['dop_base']['maldetect']['checksum'] = 'dd2badb95f75ae90ed94892d799aedad
 default['dop_base']['bfd']['url'] = 'http://www.rfxn.com/downloads/bfd-current.tar.gz'
 default['dop_base']['bfd']['version'] = '1.5-2'
 default['dop_base']['bfd']['checksum'] = 'c3fbce3a17156b047d4efc2b3398c5bf021af7578718f159cdaa2c40e0d4d0bc'
+default['dop_base']['bfd']['enable'] = false
 
 # # # #
 # apf #

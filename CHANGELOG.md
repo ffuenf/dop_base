@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.9 (February 13, 2015)
+
+* disable apf, bfd and maldetect by default completely
+
 ## 0.2.8 (January 21, 2015)
 
 * disable (Advanced Policy Firewall)[https://www.rfxn.com/projects/advanced-policy-firewall/] by default
