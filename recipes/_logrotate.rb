@@ -24,5 +24,5 @@ logrotate_app 'fail2ban' do
   path '/var/log/fail2ban.log'
   frequency 'weekly'
   rotate 4
-  create '644 root admin'
+  create '644 root adm'
 end

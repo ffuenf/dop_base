@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.10 (February 16, 2015)
+
+* fix ownership of logrotate/fail2ban
+
 ## 0.2.9 (February 13, 2015)
 
 * disable apf, bfd and maldetect by default completely
