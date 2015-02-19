@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.11 (February 19, 2015)
+
+* introduce node['dop_base']['sshd_config']['use_custom_adjustments'] to circumvent too special sshd_config settings
+
 ## 0.2.10 (February 16, 2015)
 
 * fix ownership of logrotate/fail2ban

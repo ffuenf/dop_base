@@ -5,6 +5,7 @@ default['sshd']['sshd_config']['PermitRootLogin'] = 'no'
 default['sshd']['sshd_config']['PasswordAuthentication'] = 'no'
 default['sshd']['sshd_config']['PubkeyAuthentication'] = 'yes'
 default['sshd']['sshd_config']['UseDNS'] = 'no'
+default['dop_base']['sshd_config']['use_custom_adjustments'] = false
 
 default['dop_base']['hosts']['hostname'] = 'dop'
 default['dop_base']['hosts']['hostnames'] = [

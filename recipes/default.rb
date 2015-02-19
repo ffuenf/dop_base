@@ -19,14 +19,16 @@
 
 include_recipe 'chef-sugar'
 include_recipe 'hostnames'
-if ubuntu_after_saucy? || debian_after_wheezy?
-  node.default['sshd']['sshd_config']['KexAlgorithms'] = 'curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256'
-  node.default['sshd']['sshd_config']['Ciphers'] = 'chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr'
-  node.default['sshd']['sshd_config']['MACs'] = 'hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com'
-else
-  node.default['sshd']['sshd_config']['KexAlgorithms'] = 'diffie-hellman-group-exchange-sha256'
-  node.default['sshd']['sshd_config']['Ciphers'] = 'aes256-ctr,aes192-ctr,aes128-ctr'
-  node.default['sshd']['sshd_config']['MACs'] = 'hmac-sha2-512,hmac-sha2-256,hmac-ripemd160'
+if node['dop_base']['sshd_config']['use_custom_adjustments']
+  if ubuntu_after_saucy? || debian_after_wheezy?
+    node.default['sshd']['sshd_config']['KexAlgorithms'] = 'curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256'
+    node.default['sshd']['sshd_config']['Ciphers'] = 'chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr'
+    node.default['sshd']['sshd_config']['MACs'] = 'hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-ripemd160-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,hmac-ripemd160,umac-128@openssh.com'
+  else
+    node.default['sshd']['sshd_config']['KexAlgorithms'] = 'diffie-hellman-group-exchange-sha256'
+    node.default['sshd']['sshd_config']['Ciphers'] = 'aes256-ctr,aes192-ctr,aes128-ctr'
+    node.default['sshd']['sshd_config']['MACs'] = 'hmac-sha2-512,hmac-sha2-256,hmac-ripemd160'
+  end
 end
 include_recipe 'sshd'
 include_recipe 'ssh'
@@ -99,9 +101,11 @@ end
 
 execute 'clear moduli' do
   command 'grep -v " 1023 " /etc/ssh/moduli > /etc/ssh/moduli.temp && mv /etc/ssh/moduli.temp /etc/ssh/moduli'
+  only_if { node['dop_base']['sshd_config']['use_custom_adjustments'] }
 end
 execute 'clear moduli' do
   command 'grep -v " 1535 " /etc/ssh/moduli > /etc/ssh/moduli.temp && mv /etc/ssh/moduli.temp /etc/ssh/moduli'
+  only_if { node['dop_base']['sshd_config']['use_custom_adjustments'] }
 end
 
 bash 'generate rsa host-key' do
@@ -110,11 +114,12 @@ bash 'generate rsa host-key' do
   rm ssh_host_*key*
   ssh-keygen -t rsa -b 4096 -f ssh_host_rsa_key -N ''
   EOC
+  only_if { node['dop_base']['sshd_config']['use_custom_adjustments'] }
 end
 bash 'generate ed25519 host-key' do
   cwd '/etc/ssh'
   code <<-EOC
   ssh-keygen -t ed25519 -f ssh_host_ed25519_key -N ''
   EOC
-  only_if { ubuntu_after_saucy? || debian_after_wheezy? }
+  only_if { node['dop_base']['sshd_config']['use_custom_adjustments'] && (ubuntu_after_saucy? || debian_after_wheezy?) }
 end
