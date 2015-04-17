@@ -35,6 +35,14 @@ cookbook_file '/etc/fail2ban/filter.d/pure-ftpd.conf' do
   notifies :restart, 'service[fail2ban]'
 end
 
+cookbook_file '/etc/fail2ban/filter.d/magento-backend.conf' do
+  source 'fail2ban_filter_magento-backend'
+  owner 'root'
+  group 'root'
+  mode 0644
+  notifies :restart, 'service[fail2ban]'
+end
+
 cookbook_file '/etc/fail2ban/filter.d/wordpress.conf' do
   source 'fail2ban_filter_wordpress'
   owner 'root'

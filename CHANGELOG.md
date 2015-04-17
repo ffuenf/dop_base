@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.12 (April 17, 2015)
+
+* introduce magento backend login filter for fail2ban
+
 ## 0.2.11 (February 19, 2015)
 
 * introduce node['dop_base']['sshd_config']['use_custom_adjustments'] to circumvent too special sshd_config settings
