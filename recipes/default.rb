@@ -46,7 +46,7 @@ include_recipe 'dop_base::_fail2ban'
 include_recipe 'dop_base::_logrotate'
 include_recipe 'dop_base::_awscli'
 include_recipe 'dop_base::_gnupg'
-include_recipe 'dop_base::_apf'  if node['dop_base']['apf']['enable']
+include_recipe 'dop_base::_apf' if node['dop_base']['apf']['enable']
 include_recipe 'dop_base::_maldetect' if node['dop_base']['maldetect']['enable']
 include_recipe 'dop_base::_bfd' if node['dop_base']['bfd']['enable']
 include_recipe 'apt_cleanup'
