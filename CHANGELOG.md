@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.13 (October 9, 2015)
+
+* add tmp_npm() to allow installation of nodejs and modules inside vagrant
+
 ## 0.2.12 (April 17, 2015)
 
 * introduce magento backend login filter for fail2ban

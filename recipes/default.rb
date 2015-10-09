@@ -61,9 +61,6 @@ node['dop_base']['hosts']['hostnames'].each do |entry|
     notifies :reload, 'ohai[reload]', :immediately
   end
 end
-ohai 'reload' do
-  action :nothing
-end
 
 directory '/root/.ssh' do
   owner 'root'
@@ -79,6 +76,16 @@ template '/root/.bashrc' do
 end
 template '/home/vagrant/.bashrc' do
   source '.bashrc.erb'
+  only_if { vagrant? }
+end
+cookbook_file '/home/vagrant/tmp_npm.sh' do
+  owner 'root'
+  group 'root'
+  mode 0755
+  only_if { vagrant? }
+end
+cookbook_file '/home/vagrant/tmp_npm.sh' do
+  mode 0755
   only_if { vagrant? }
 end
 
@@ -122,4 +129,8 @@ bash 'generate ed25519 host-key' do
   ssh-keygen -t ed25519 -f ssh_host_ed25519_key -N ''
   EOC
   only_if { node['dop_base']['sshd_config']['use_custom_adjustments'] && (ubuntu_after_saucy? || debian_after_wheezy?) }
+end
+
+ohai 'reload' do
+  action :reload
 end
