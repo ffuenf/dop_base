@@ -52,6 +52,7 @@ if node['dop_base']['sshd_config']['use_custom_adjustments']
               NoHostAuthenticationForLocalhost: 'yes',
               KexAlgorithms: 'curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256',
               Protocol: '2',
+              HostKey: '/etc/ssh/ssh_host_ed25519_key',
               HostKey: '/etc/ssh/ssh_host_rsa_key',
               PasswordAuthentication: 'no',
               PubkeyAuthentication: 'yes',
