@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.14 (November 26, 2015)
+
+* add ssh_host_ed25519_key
+* remove duplicate host-key (switch to ed25519 if we use customizations generally)
+* optimize motd
+
 ## 0.2.13 (October 9, 2015)
 
 * add tmp_npm() to allow installation of nodejs and modules inside vagrant

@@ -26,7 +26,7 @@ Vagrant.configure('2') do |config|
   config.vm.network 'private_network', ip: '10.0.0.50'
 
   # basebox
-  config.vm.box = 'ffuenf/debian-7.8.0-amd64'
+  config.vm.box = 'ffuenf/debian-7.9.0-amd64'
 
   # virtualbox options
   config.vm.provider 'virtualbox' do |v|
@@ -46,8 +46,5 @@ Vagrant.configure('2') do |config|
       abspath('Vagrantfile.chef.json')
     end
     chef.json = JSON.parse(IO.read(json_file))
-
-    # Configure Chef output
-    chef.custom_config_path = 'Vagrantfile.config'
   end
 end

@@ -1,12 +1,13 @@
+<a href="http://www.ffuenf.de" title="ffuenf - code • design • e-commerce"><img src="https://github.com/ffuenf/Ffuenf_Common/blob/master/skin/adminhtml/default/default/ffuenf/ffuenf.png" alt="ffuenf - code • design • e-commerce" /></a>
+
 dop_base
 ========
 [![GitHub tag](http://img.shields.io/github/tag/ffuenf/dop_base.svg)][tag]
 [![Build Status](http://img.shields.io/travis/ffuenf/dop_base.svg)][travis]
-[![Gittip](http://img.shields.io/gittip/arosenhagen.svg)][gittip]
-
+[![PayPal Donate](https://img.shields.io/badge/paypal-donate-blue.svg)][paypal_donate]
 [tag]: https://github.com/ffuenf/dop_base/tags
 [travis]: https://travis-ci.org/ffuenf/dop_base
-[gittip]: https://www.gittip.com/arosenhagen
+[paypal_donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J2PQS2WLT2Y8W&item_name=dop%3a%20dop_base&item_number=dop_base&currency_code=EUR
 
 dop_base is a wrapper-cookbook to setup commonly used services by ffuenf.
 
@@ -17,8 +18,12 @@ This cookbook depends on the following community cookbooks.
 
 * sudo
 * user
-* ssh_known_hosts
+* sshd
+* ssh
+* hostnames
+* hostsfile
 * apt
+* apt_cleanup
 * git
 * dotdeb
 * ntp
@@ -28,6 +33,10 @@ This cookbook depends on the following community cookbooks.
 * chef_handler
 * chef-sugar
 * sysctl
+* sysdig
+* bsw_gpg
+* chef-sugar
+* python
 
 Platform
 --------
@@ -51,8 +60,8 @@ We assume to use an encrypted databag which holds sensitive user information wit
   "name": "dop_deploy",
   "group": "dop_deploy",
   "ssh_keys": [
-		"authorized ssh public key 1",
-		"authorized ssh public key 2"
+        "authorized ssh public key 1",
+        "authorized ssh public key 2"
   ],
   "groups": [ "dop_deploy", "sudo" ],
   "home": "/home/dop_deploy",
@@ -84,7 +93,6 @@ The following Rake tasks are provided for automated testing of the cookbook:
 
 ```
 $ rake -T
-rake integration:cloud    # Run Test Kitchen with cloud plugins
 rake integration:vagrant  # Run Test Kitchen with Vagrant
 rake spec                 # Run ChefSpec examples
 rake style                # Run all style checks
