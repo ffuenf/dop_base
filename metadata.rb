@@ -18,7 +18,6 @@ end
   hostnames
   hostsfile
   apt
-  apt_cleanup
   git
   dotdeb
   ntp

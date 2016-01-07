@@ -49,7 +49,6 @@ include_recipe 'dop_base::_gnupg'
 include_recipe 'dop_base::_apf' if node['dop_base']['apf']['enable']
 include_recipe 'dop_base::_maldetect' if node['dop_base']['maldetect']['enable']
 include_recipe 'dop_base::_bfd' if node['dop_base']['bfd']['enable']
-include_recipe 'apt_cleanup'
 include_recipe 'chef_handler'
 
 node['dop_base']['hosts']['hostnames'].each do |entry|
