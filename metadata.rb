@@ -4,7 +4,7 @@ license 'Apache 2.0'
 description 'installs/configures dop_base'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 name 'dop_base'
-version '0.2.13'
+version '0.2.14'
 
 %w( debian ).each do |os|
   supports os
@@ -18,7 +18,6 @@ end
   hostnames
   hostsfile
   apt
-  apt_cleanup
   git
   dotdeb
   ntp
