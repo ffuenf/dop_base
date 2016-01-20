@@ -13,7 +13,7 @@ Vagrant.configure('2') do |config|
     config.cache.scope = :machine
     config.cache.synced_folder_opts = {
       type: :nfs,
-      mount_options: ['rw', 'tcp', 'nolock']
+      mount_options: %w('rw', 'tcp', 'nolock')
     }
   end
 
@@ -36,7 +36,7 @@ Vagrant.configure('2') do |config|
   config.vm.provision 'chef_solo' do |chef|
     chef.cookbooks_path = 'vendor/cookbooks'
     chef.json = {
-      "run_list" => [
+      'run_list' => [
         'recipe[dop_base::default]'
       ]
     }
