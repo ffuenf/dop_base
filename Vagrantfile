@@ -37,7 +37,7 @@ Vagrant.configure('2') do |config|
     chef.cookbooks_path = 'vendor/cookbooks'
     chef.json = {
       "run_list" => [
-        "recipe[dop_base::default]"
+        'recipe[dop_base::default]'
       ]
     }
   end
