@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
+include_recipe 'build-essential'
 include_recipe 'chef-sugar'
 include_recipe 'hostnames'
 if node['dop_base']['sshd_config']['use_custom_adjustments']

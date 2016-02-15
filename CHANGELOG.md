@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.2.15 (February 15, 2016)
+
+* add dependency to build-essential cookbook
+
 ## 0.2.14 (January 7, 2016)
 
 * add ssh_host_ed25519_key

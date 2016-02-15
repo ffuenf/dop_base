@@ -11,6 +11,7 @@ version '0.2.14'
 end
 
 %w(
+  build-essential
   sudo
   user
   sshd

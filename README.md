@@ -16,6 +16,7 @@ Dependencies
 
 This cookbook depends on the following community cookbooks.
 
+* build-essential
 * sudo
 * user
 * sshd
@@ -23,7 +24,6 @@ This cookbook depends on the following community cookbooks.
 * hostnames
 * hostsfile
 * apt
-* apt_cleanup
 * git
 * dotdeb
 * ntp
@@ -45,6 +45,7 @@ The following platforms are supported and tested:
 
 * Debian 6.x
 * Debian 7.x
+* Debian 8.x
 * Ubuntu 14.04.x
 * Ubuntu 14.10.x
 
@@ -107,7 +108,7 @@ License and Author
 
 - Author:: Achim Rosenhagen (<a.rosenhagen@ffuenf.de>)
 
-- Copyright:: 2015, ffuenf
+- Copyright:: 2016, ffuenf
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
