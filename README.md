@@ -22,7 +22,6 @@ This cookbook depends on the following community cookbooks.
 * sshd
 * ssh
 * hostnames
-* hostsfile
 * apt
 * git
 * dotdeb
@@ -58,8 +57,7 @@ We assume to use an encrypted databag which holds sensitive user information wit
 ```
 {
   "id": "deploy", 
-  "name": "dop_deploy",
-  "group": "dop_deploy",
+  "username": "dop_deploy",
   "ssh_keys": [
         "authorized ssh public key 1",
         "authorized ssh public key 2"

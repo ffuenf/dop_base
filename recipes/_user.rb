@@ -2,7 +2,7 @@
 # Cookbook Name:: dop_base
 # Recipe:: _user
 #
-# Copyright 2015, Achim Rosenhagen
+# Copyright 2016, Achim Rosenhagen
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ ohai 'reload' do
   action :nothing
 end
 
-user_account node['users']['deploy']['name'] do
+user_account node['users']['deploy']['username'] do
   ssh_keys node['users']['deploy']['ssh_keys']
   ssh_keygen false
   notifies :reload, 'ohai[reload]', :immediately
@@ -35,15 +35,15 @@ template "#{node['users']['deploy']['home']}/wrap-ssh4git.sh" do
   variables(
     git: node['dop_base']['git']
   )
-  owner node['users']['deploy']['name']
-  group node['users']['deploy']['group']
+  owner node['users']['deploy']['username']
+  group node['users']['deploy']['username']
   mode 0700
 end
 
 if node['dop_base']['sshd_config']['use_custom_adjustments']
   if ubuntu_after_saucy? || debian_after_wheezy?
     ssh_config '*' do
-      user node['users']['deploy']['name']
+      user node['users']['deploy']['username']
       options StrictHostKeyChecking: 'yes',
               UserKnownHostsFile: '/etc/ssh/ssh_known_hosts',
               ControlPersist: 'yes',
@@ -60,7 +60,7 @@ if node['dop_base']['sshd_config']['use_custom_adjustments']
     end
   else
     ssh_config '*' do
-      user node['users']['deploy']['name']
+      user node['users']['deploy']['username']
       options StrictHostKeyChecking: 'yes',
               UserKnownHostsFile: '/etc/ssh/ssh_known_hosts',
               ControlPersist: 'yes',
@@ -78,7 +78,7 @@ if node['dop_base']['sshd_config']['use_custom_adjustments']
   end
 else
   ssh_config '*' do
-    user node['users']['deploy']['name']
+    user node['users']['deploy']['username']
     options StrictHostKeyChecking: 'yes',
             UserKnownHostsFile: '/etc/ssh/ssh_known_hosts',
             ControlPersist: 'yes',
@@ -93,15 +93,15 @@ end
 
 cookbook_file "#{node['users']['deploy']['home']}/.gemrc" do
   source 'gemrc'
-  owner node['users']['deploy']['name']
-  group node['users']['deploy']['group']
+  owner node['users']['deploy']['username']
+  group node['users']['deploy']['username']
   mode 0644
 end
 
 cookbook_file "#{node['users']['deploy']['home']}/.gitignore_global" do
   source 'gitignore_global'
-  owner node['users']['deploy']['name']
-  group node['users']['deploy']['group']
+  owner node['users']['deploy']['username']
+  group node['users']['deploy']['username']
   mode 0644
 end
 
@@ -110,8 +110,8 @@ template "#{node['users']['deploy']['home']}/.gitconfig" do
   variables(
     git: node['dop_base']['git']
   )
-  owner node['users']['deploy']['name']
-  group node['users']['deploy']['group']
+  owner node['users']['deploy']['username']
+  group node['users']['deploy']['username']
   mode 0644
 end
 template "#{node['users']['deploy']['home']}/.bashrc" do
@@ -119,7 +119,7 @@ template "#{node['users']['deploy']['home']}/.bashrc" do
   not_if { vagrant? }
 end
 
-user_account node['users']['service']['name'] do
+user_account node['users']['service']['username'] do
   comment node['users']['service']['comment']
   ssh_keys node['users']['service']['ssh_keys']
   ssh_keygen false

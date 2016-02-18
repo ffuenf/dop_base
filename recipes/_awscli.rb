@@ -2,7 +2,7 @@
 # Cookbook Name:: dop_base
 # Recipe:: _awscli
 #
-# Copyright 2015, Achim Rosenhagen
+# Copyright 2016, Achim Rosenhagen
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ template "#{node['users']['deploy']['home']}/.aws/config" do
   variables(
     aws: node['users']['deploy']['aws']['config']
   )
-  owner node['users']['deploy']['name']
-  group node['users']['deploy']['group']
+  owner node['users']['deploy']['username']
+  group node['users']['deploy']['username']
   mode 0644
 end
 template "#{node['users']['deploy']['home']}/.aws/credentials" do
@@ -36,7 +36,7 @@ template "#{node['users']['deploy']['home']}/.aws/credentials" do
   variables(
     aws: node['users']['deploy']['aws']['credentials']
   )
-  owner node['users']['deploy']['name']
-  group node['users']['deploy']['group']
+  owner node['users']['deploy']['username']
+  group node['users']['deploy']['username']
   mode 0644
 end
