@@ -11,6 +11,7 @@ version '0.3.0'
 end
 
 %w(
+  build-essential
   sudo
   user
   sshd
