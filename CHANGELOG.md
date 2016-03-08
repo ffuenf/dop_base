@@ -2,6 +2,25 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.4.0 (March 8, 2016)
+
+* re-add dependency to build-essential
+* fix ssh_known_hosts
+* fix missing sudo for deploy user
+
+## 0.3.0 (February 18, 2016)
+
+* rewrite setting of encrypted databag attributes (compatibility to chef 12.7.2)
+* remove (Advanced Policy Firewall)[https://www.rfxn.com/projects/advanced-policy-firewall/]
+* remove (Brute Force Detection)[https://www.rfxn.com/projects/brute-force-detection/]
+* remove (Linux Malware Detect)[https://www.rfxn.com/projects/linux-malware-detect/]
+* remove dependency to hostsfile
+* set default fail2ban banaction to "iptables-multiport"
+
+## 0.2.15 (February 15, 2016)
+
+* add dependency to build-essential cookbook
+
 ## 0.2.14 (January 7, 2016)
 
 * add ssh_host_ed25519_key

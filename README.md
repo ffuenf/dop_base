@@ -16,14 +16,13 @@ Dependencies
 
 This cookbook depends on the following community cookbooks.
 
+* build-essential
 * sudo
 * user
 * sshd
 * ssh
 * hostnames
-* hostsfile
 * apt
-* apt_cleanup
 * git
 * dotdeb
 * ntp
@@ -45,6 +44,7 @@ The following platforms are supported and tested:
 
 * Debian 6.x
 * Debian 7.x
+* Debian 8.x
 * Ubuntu 14.04.x
 * Ubuntu 14.10.x
 
@@ -57,8 +57,7 @@ We assume to use an encrypted databag which holds sensitive user information wit
 ```
 {
   "id": "deploy", 
-  "name": "dop_deploy",
-  "group": "dop_deploy",
+  "username": "dop_deploy",
   "ssh_keys": [
         "authorized ssh public key 1",
         "authorized ssh public key 2"
@@ -107,7 +106,7 @@ License and Author
 
 - Author:: Achim Rosenhagen (<a.rosenhagen@ffuenf.de>)
 
-- Copyright:: 2015, ffuenf
+- Copyright:: 2016, ffuenf
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

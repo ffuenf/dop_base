@@ -2,7 +2,7 @@
 # Cookbook Name:: dop_base
 # Recipe:: default
 #
-# Copyright 2015, Achim Rosenhagen
+# Copyright 2016, Achim Rosenhagen
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,6 +17,13 @@
 # limitations under the License.
 #
 
+node.set['users']['deploy'] = Chef::EncryptedDataBagItem.load('users', 'deploy')
+node.set['users']['service'] = Chef::EncryptedDataBagItem.load('users', 'service')
+node.set['dop_base']['git']['user'] = node['users']['deploy']['username']
+node.set['dop_base']['git']['email'] = "#{node['users']['deploy']['username']}@#{node['dop_base']['hosts']['hostname']}"
+node.set['authorization']['sudo']['users'] = [node['users']['deploy']['username'].to_s]
+
+include_recipe 'build-essential'
 include_recipe 'chef-sugar'
 include_recipe 'hostnames'
 if node['dop_base']['sshd_config']['use_custom_adjustments']
@@ -46,9 +53,6 @@ include_recipe 'dop_base::_fail2ban'
 include_recipe 'dop_base::_logrotate'
 include_recipe 'dop_base::_awscli'
 include_recipe 'dop_base::_gnupg'
-include_recipe 'dop_base::_apf' if node['dop_base']['apf']['enable']
-include_recipe 'dop_base::_maldetect' if node['dop_base']['maldetect']['enable']
-include_recipe 'dop_base::_bfd' if node['dop_base']['bfd']['enable']
 include_recipe 'chef_handler'
 
 node['dop_base']['hosts']['hostnames'].each do |entry|
@@ -66,7 +70,7 @@ directory '/root/.ssh' do
   group 'root'
   mode 0700
 end
-node['dop_base']['ssh_known_hosts_entry'].each do |host|
+node['ssh_known_hosts']['entries'].each do |host|
   ssh_known_hosts host
 end
 

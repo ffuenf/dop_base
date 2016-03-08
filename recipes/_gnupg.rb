@@ -2,7 +2,7 @@
 # Cookbook Name:: dop_base
 # Recipe:: _gnupg
 #
-# Copyright 2015, Achim Rosenhagen
+# Copyright 2016, Achim Rosenhagen
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,6 +21,6 @@ include_recipe 'bsw_gpg'
 
 bsw_gpg_load_key_from_string 'set gpg keys' do
   key_contents node['users']['deploy']['gpg']['key']
-  for_user node['users']['deploy']['name']
+  for_user node['users']['deploy']['username']
   not_if { ::File.directory?("#{node['users']['deploy']['home']}/.gnupg") }
 end

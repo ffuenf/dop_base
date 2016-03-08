@@ -25,11 +25,11 @@ platforms:
     box_url: https://atlas.hashicorp.com/ffuenf/debian-7.9.0-amd64
     box_check_update: true
 
-- name: debian-8.2.0-amd64
+- name: debian-8.3.0-amd64
   driver_plugin: vagrant
   driver_config:
-    box: ffuenf/debian-8.2.0-amd64
-    box_url: https://atlas.hashicorp.com/ffuenf/debian-8.2.0-amd64
+    box: ffuenf/debian-8.3.0-amd64
+    box_url: https://atlas.hashicorp.com/ffuenf/debian-8.3.0-amd64
     box_check_update: true
 
 - name: ubuntu-14.04.3-server-amd64
