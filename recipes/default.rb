@@ -69,7 +69,7 @@ directory '/root/.ssh' do
   group 'root'
   mode 0700
 end
-node['dop_base']['ssh_known_hosts_entry'].each do |host|
+node['ssh_known_hosts']['entries'].each do |host|
   ssh_known_hosts host
 end
 
