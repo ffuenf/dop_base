@@ -37,7 +37,6 @@ default['ssh_known_hosts']['entries'] = %w(github.com bitbucket.org)
 # sudo  #
 # # # # #
 default['authorization']['sudo']['groups'] = ['sudo']
-default['authorization']['sudo']['users'] = [node['users']['deploy']['username']]
 default['authorization']['sudo']['passwordless'] = true
 default['authorization']['sudo']['include_sudoers_d'] = true
 default['authorization']['sudo']['agent_forwarding'] = true
