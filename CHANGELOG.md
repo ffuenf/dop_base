@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.4.0 (March 8, 2016)
+
+* re-add dependency to build-essential
+* fix ssh_known_hosts
+* fix missing sudo for deploy user
+
 ## 0.3.0 (February 18, 2016)
 
 * rewrite setting of encrypted databag attributes (compatibility to chef 12.7.2)
