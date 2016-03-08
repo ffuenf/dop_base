@@ -21,7 +21,7 @@ node.set['users']['deploy'] = Chef::EncryptedDataBagItem.load('users', 'deploy')
 node.set['users']['service'] = Chef::EncryptedDataBagItem.load('users', 'service')
 node.set['dop_base']['git']['user'] = node['users']['deploy']['username']
 node.set['dop_base']['git']['email'] = "#{node['users']['deploy']['username']}@#{node['dop_base']['hosts']['hostname']}"
-node.set['authorization']['sudo']['users'] = ["#{node['users']['deploy']['username']}"]
+node.set['authorization']['sudo']['users'] = [node['users']['deploy']['username'].to_s]
 
 include_recipe 'build-essential'
 include_recipe 'chef-sugar'
