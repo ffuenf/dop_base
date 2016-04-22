@@ -42,7 +42,6 @@ include_recipe 'ssh'
 include_recipe 'dotdeb' if debian?
 include_recipe 'ntp'
 include_recipe 'sysctl'
-include_recipe 'sysdig'
 include_recipe 'git'
 include_recipe 'htpasswd'
 include_recipe 'chef-sugar'

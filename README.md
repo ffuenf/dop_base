@@ -32,7 +32,6 @@ This cookbook depends on the following community cookbooks.
 * chef_handler
 * chef-sugar
 * sysctl
-* sysdig
 * bsw_gpg
 * chef-sugar
 * python
@@ -47,6 +46,7 @@ The following platforms are supported and tested:
 * Debian 8.x
 * Ubuntu 14.04.x
 * Ubuntu 14.10.x
+* Ubuntu 16.04.x
 
 Other Debian family distributions are assumed to work.
 

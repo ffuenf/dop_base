@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.5.0 (April 22, 2016)
+
+* remove dependency to sysdig as the sources are now available as legacy packages for debian and ubuntu
+
 ## 0.4.0 (March 8, 2016)
 
 * re-add dependency to build-essential
