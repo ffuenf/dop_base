@@ -80,4 +80,5 @@ default['dop_base']['packages'] = %w(
   screen
   strace
   sysstat
+  sysdig
 )
