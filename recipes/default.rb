@@ -67,7 +67,7 @@ end
 directory '/root/.ssh' do
   owner 'root'
   group 'root'
-  mode 0700
+  mode 0o700
 end
 node['ssh_known_hosts']['entries'].each do |host|
   ssh_known_hosts host
@@ -83,11 +83,11 @@ end
 cookbook_file '/home/vagrant/tmp_npm.sh' do
   owner 'root'
   group 'root'
-  mode 0755
+  mode 0o755
   only_if { vagrant? }
 end
 cookbook_file '/home/vagrant/tmp_npm.sh' do
-  mode 0755
+  mode 0o755
   only_if { vagrant? }
 end
 
@@ -98,14 +98,14 @@ end
 # Message on login
 template '/etc/motd' do
   source 'motd.erb'
-  mode 0755
+  mode 0o755
   backup 0
 end
 
 cookbook_file '/etc/default/sysstat' do
   owner 'root'
   group 'root'
-  mode 0644
+  mode 0o644
 end
 
 execute 'clear moduli' do

@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.5.1 (July 21, 2016)
+
+* remove cookbook attribute in logrotate_app (@sheuser)
+
 ## 0.5.0 (April 22, 2016)
 
 * remove dependency to sysdig as the sources are now available as legacy packages for debian and ubuntu
