@@ -8,7 +8,7 @@ version '0.5.1'
 issues_url 'https://github.com/ffuenf/dop_base/issues'
 source_url 'https://github.com/ffuenf/dop_base'
 
-%w( debian ubuntu ).each do |os|
+%w(debian ubuntu).each do |os|
   supports os
 end
 

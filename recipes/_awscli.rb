@@ -29,7 +29,7 @@ template "#{node['users']['deploy']['home']}/.aws/config" do
   )
   owner node['users']['deploy']['username']
   group node['users']['deploy']['username']
-  mode 0644
+  mode 0o644
 end
 template "#{node['users']['deploy']['home']}/.aws/credentials" do
   source 'awscredentials.erb'
@@ -38,5 +38,5 @@ template "#{node['users']['deploy']['home']}/.aws/credentials" do
   )
   owner node['users']['deploy']['username']
   group node['users']['deploy']['username']
-  mode 0644
+  mode 0o644
 end

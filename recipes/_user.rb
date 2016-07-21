@@ -37,7 +37,7 @@ template "#{node['users']['deploy']['home']}/wrap-ssh4git.sh" do
   )
   owner node['users']['deploy']['username']
   group node['users']['deploy']['username']
-  mode 0700
+  mode 0o700
 end
 
 if node['dop_base']['sshd_config']['use_custom_adjustments']
@@ -95,14 +95,14 @@ cookbook_file "#{node['users']['deploy']['home']}/.gemrc" do
   source 'gemrc'
   owner node['users']['deploy']['username']
   group node['users']['deploy']['username']
-  mode 0644
+  mode 0o644
 end
 
 cookbook_file "#{node['users']['deploy']['home']}/.gitignore_global" do
   source 'gitignore_global'
   owner node['users']['deploy']['username']
   group node['users']['deploy']['username']
-  mode 0644
+  mode 0o644
 end
 
 template "#{node['users']['deploy']['home']}/.gitconfig" do
@@ -112,7 +112,7 @@ template "#{node['users']['deploy']['home']}/.gitconfig" do
   )
   owner node['users']['deploy']['username']
   group node['users']['deploy']['username']
-  mode 0644
+  mode 0o644
 end
 template "#{node['users']['deploy']['home']}/.bashrc" do
   source '.bashrc.erb'
