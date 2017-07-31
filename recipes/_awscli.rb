@@ -18,7 +18,7 @@
 #
 
 package 'rsync'
-include_recipe 'poise_python'
+include_recipe 'poise-python'
 python_package 'awscli'
 
 directory "#{node['users']['deploy']['home']}/.aws"
