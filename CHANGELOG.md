@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.5.2 (July 31, 2017)
+
+* gnupg (compatibility to Chef13)
+* switch to poise_python (compatibility to Chef13)
+
 ## 0.5.1 (July 21, 2016)
 
 * remove cookbook attribute in logrotate_app (@sheuser)

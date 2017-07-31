@@ -31,7 +31,7 @@ default['dop_base']['timezone'] = 'Europe/Berlin'
 # # # # # # # # # #
 # ssh known hosts #
 # # # # # # # # # #
-default['ssh_known_hosts']['entries'] = %w(github.com bitbucket.org)
+default['ssh_known_hosts']['entries'] = %w[github.com bitbucket.org]
 
 # # # # #
 # sudo  #
@@ -40,7 +40,7 @@ default['authorization']['sudo']['groups'] = ['sudo']
 default['authorization']['sudo']['passwordless'] = true
 default['authorization']['sudo']['include_sudoers_d'] = true
 default['authorization']['sudo']['agent_forwarding'] = true
-default['authorization']['sudo']['sudoers_defaults'] = %w(env_reset env_keep=SSH_AUTH_SOCK)
+default['authorization']['sudo']['sudoers_defaults'] = %w[env_reset env_keep=SSH_AUTH_SOCK]
 
 # # # # # # #
 # fail2ban  #
@@ -61,7 +61,7 @@ default['sysctl']['params']['vm.overcommit_memory'] = 1
 # # # # # # #
 # packages  #
 # # # # # # #
-default['dop_base']['packages'] = %w(
+default['dop_base']['packages'] = %w[
   htop
   nmap
   siege
@@ -81,4 +81,4 @@ default['dop_base']['packages'] = %w(
   strace
   sysstat
   sysdig
-)
+]

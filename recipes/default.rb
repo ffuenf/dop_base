@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-node.set['users']['deploy'] = Chef::EncryptedDataBagItem.load('users', 'deploy')
-node.set['users']['service'] = Chef::EncryptedDataBagItem.load('users', 'service')
-node.set['dop_base']['git']['user'] = node['users']['deploy']['username']
-node.set['dop_base']['git']['email'] = "#{node['users']['deploy']['username']}@#{node['dop_base']['hosts']['hostname']}"
-node.set['authorization']['sudo']['users'] = [node['users']['deploy']['username'].to_s]
+node.normal['users']['deploy'] = data_bag_item('users', 'deploy')
+node.normal['users']['service'] = data_bag_item('users', 'service')
+node.normal['dop_base']['git']['user'] = node['users']['deploy']['username']
+node.normal['dop_base']['git']['email'] = "#{node['users']['deploy']['username']}@#{node['dop_base']['hosts']['hostname']}"
+node.normal['authorization']['sudo']['users'] = [node['users']['deploy']['username'].to_s]
 
 include_recipe 'build-essential'
 include_recipe 'chef-sugar'
@@ -51,7 +51,6 @@ include_recipe 'dop_base::_locales'
 include_recipe 'dop_base::_fail2ban'
 include_recipe 'dop_base::_logrotate'
 include_recipe 'dop_base::_awscli'
-include_recipe 'dop_base::_gnupg'
 include_recipe 'chef_handler'
 
 node['dop_base']['hosts']['hostnames'].each do |entry|
