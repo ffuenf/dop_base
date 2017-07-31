@@ -51,7 +51,6 @@ include_recipe 'dop_base::_locales'
 include_recipe 'dop_base::_fail2ban'
 include_recipe 'dop_base::_logrotate'
 include_recipe 'dop_base::_awscli'
-include_recipe 'dop_base::_gnupg'
 include_recipe 'chef_handler'
 
 node['dop_base']['hosts']['hostnames'].each do |entry|

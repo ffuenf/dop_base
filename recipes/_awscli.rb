@@ -18,8 +18,8 @@
 #
 
 package 'rsync'
-include_recipe 'python'
-python_pip 'awscli'
+include_recipe 'poise_python'
+python_package 'awscli'
 
 directory "#{node['users']['deploy']['home']}/.aws"
 template "#{node['users']['deploy']['home']}/.aws/config" do
