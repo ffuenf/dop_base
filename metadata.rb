@@ -9,11 +9,11 @@ issues_url 'https://github.com/ffuenf/dop_base/issues'
 source_url 'https://github.com/ffuenf/dop_base'
 chef_version '>= 12.5' if respond_to?(:chef_version)
 
-%w(debian ubuntu).each do |os|
+%w[debian ubuntu].each do |os|
   supports os
 end
 
-%w(
+%w[
   build-essential
   sudo
   user
@@ -32,6 +32,6 @@ end
   sysctl
   chef-sugar
   poise-python
-).each do |ressource|
+].each do |ressource|
   depends ressource
 end

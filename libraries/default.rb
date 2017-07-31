@@ -24,19 +24,19 @@ def maldetect_version?(version)
   cmdstr = "maldet | grep -qi 'Linux Malware Detect v#{version}'"
   cmd = Mixlib::ShellOut.new(cmdstr)
   cmd.run_command
-  cmd.exitstatus == 0
+  cmd.exitstatus.zero?
 end
 
 def bfd_version?(version)
   cmdstr = "bfd | grep -qi 'Brute Force Detection v#{version}'"
   cmd = Mixlib::ShellOut.new(cmdstr)
   cmd.run_command
-  cmd.exitstatus == 0
+  cmd.exitstatus.zero?
 end
 
 def apf_version?(version)
   cmdstr = "apf | grep -qi 'Adcanced Policy Firewall v#{version}'"
   cmd = Mixlib::ShellOut.new(cmdstr)
   cmd.run_command
-  cmd.exitstatus == 0
+  cmd.exitstatus.zero?
 end

@@ -13,7 +13,7 @@ describe file('/root/.ssh') do
   it { should be_grouped_into 'root' }
 end
 
-%w(
+%w[
   htop
   nmap
   siege
@@ -32,7 +32,7 @@ end
   screen
   strace
   sysstat
-).each do |pkg|
+].each do |pkg|
   describe package(pkg) do
     it { should be_installed }
   end
