@@ -2,12 +2,9 @@
 
 dop_base
 ========
-[![GitHub tag](http://img.shields.io/github/tag/ffuenf/dop_base.svg)][tag]
-[![Build Status](http://img.shields.io/travis/ffuenf/dop_base.svg)][travis]
-[![PayPal Donate](https://img.shields.io/badge/paypal-donate-blue.svg)][paypal_donate]
-[tag]: https://github.com/ffuenf/dop_base/tags
-[travis]: https://travis-ci.org/ffuenf/dop_base
-[paypal_donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J2PQS2WLT2Y8W&item_name=dop%3a%20dop_base&item_number=dop_base&currency_code=EUR
+[![GitHub tag](https://img.shields.io/github/tag/ffuenf/dop_base.svg)](https://github.com/ffuenf/dop_base)
+[![Build Status](https://img.shields.io/travis/ffuenf/dop_base.svg)](https://travis-ci.org/ffuenf/dop_base)
+[![PayPal Donate](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J2PQS2WLT2Y8W&item_name=dop%3a%20dop_base&item_number=dop_base&currency_code=EUR)
 
 dop_base is a wrapper-cookbook to setup commonly used services by ffuenf.
 
@@ -106,7 +103,7 @@ License and Author
 
 - Author:: Achim Rosenhagen (<a.rosenhagen@ffuenf.de>)
 
-- Copyright:: 2016, ffuenf
+- Copyright:: 2019, ffuenf
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
