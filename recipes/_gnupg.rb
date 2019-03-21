@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: dop_base
-# Recipe:: _timezone
+# Recipe:: _gnupg
 #
 # Copyright 2019, Achim Rosenhagen
 #
@@ -17,9 +17,10 @@
 # limitations under the License.
 #
 
-execute 'set_timezone' do
-  command "echo #{node['dop_base']['timezone']} > /etc/timezone"
-end
-execute 'set_timezone' do
-  command 'dpkg-reconfigure -f noninteractive tzdata'
+include_recipe 'bsw_gpg'
+
+bsw_gpg_load_key_from_string 'set gpg keys' do
+  key_contents node['users']['deploy']['gpg']['key']
+  for_user node['users']['deploy']['username']
+  not_if { ::File.directory?("#{node['users']['deploy']['home']}/.gnupg") }
 end

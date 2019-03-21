@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of dop_base.
 
+## 0.6.0 (March 21, 2019)
+
+* remove awscli
+* bump version
+
 ## 0.5.2 (July 31, 2017)
 
 * gnupg (compatibility to Chef13)

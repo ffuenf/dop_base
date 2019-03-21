@@ -2,7 +2,7 @@
 # Cookbook Name:: dop_base
 # Recipe:: default
 #
-# Copyright 2016, Achim Rosenhagen
+# Copyright 2019, Achim Rosenhagen
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -50,7 +50,6 @@ include_recipe 'dop_base::_timezone'
 include_recipe 'dop_base::_locales'
 include_recipe 'dop_base::_fail2ban'
 include_recipe 'dop_base::_logrotate'
-include_recipe 'dop_base::_awscli'
 include_recipe 'chef_handler'
 
 node['dop_base']['hosts']['hostnames'].each do |entry|
